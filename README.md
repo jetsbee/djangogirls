@@ -27,10 +27,25 @@ docker compose down
 docker compose run web django-admin startproject mysite .
 ```
 
-## Synchronizes the database state with the current set of models and migrations.
+## Synchronizes the database state with the current set of models and migrations. (Execute the SQL commands)
 
 Ref. [migrate](https://docs.djangoproject.com/en/5.0/ref/django-admin/#migrate)
 
 ```sh
+# By pecific app
+python manage.py migrate <`APP_NAME`>
+
+# All apps
 python manage.py migrate
+```
+
+
+## Create new migrations based on the changes you have made to your django models. (Generate the SQL commands)
+
+```sh
+# By specific app
+python manage.py makemigrations <`APP_NAME`>
+
+# All apps
+python manage.py makemigrations
 ```

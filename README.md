@@ -49,3 +49,8 @@ python manage.py makemigrations <`APP_NAME`>
 # All apps
 python manage.py makemigrations
 ```
+
+## Create superuser for admin
+```sh
+python manage.py createsuperuser
+```

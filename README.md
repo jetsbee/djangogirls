@@ -51,6 +51,13 @@ python manage.py makemigrations
 ```
 
 ## Create superuser for admin
+
 ```sh
 python manage.py createsuperuser
+```
+
+## Run django interactive console
+
+```sh
+python manage.py shell
 ```

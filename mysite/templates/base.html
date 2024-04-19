@@ -3,9 +3,11 @@
     <head>
         <title>Ola's blog</title>
         <link rel="stylesheet" href="{% static 'common/css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'common/css/common.css' %}">
         {% block links %}{% endblock %}
     </head>
     <body>
+        {% include "header.html" %}
         {% block body %}{% endblock %}
     </body>
 </html>

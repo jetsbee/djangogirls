@@ -2,12 +2,10 @@
 
 {% block body %}
     <div class="ml-[40px]">
-    {% for post in posts %}
         <div class="mb-[70px]">
             <p class="text-[#828282]">published: {{ post.published_date }}</p>
-            <h1><a href={% url 'post_detail' pk=post.pk %}>{{ post.title }}</a></h1>
+            <h1>{{ post.title }}</h1>
             <p class="text-slate-500 break-all">{{ post.text|linebreaksbr }}</p>
         </div>
-    {% endfor %}
     </div>
 {% endblock %}

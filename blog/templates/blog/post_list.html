@@ -1,18 +1,26 @@
-<html>
-    <head>
-        <title>Ola's blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-        
-        {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="bg-[#ff9400] mt-0 pt-[20px] pr-[20px] pb-[20px] pl-[40px]">
+        <h1>
+            <a href="/" class="text-white hover:text-white visited:text-white 
+                text-[36pt] hover:text-[36pt] visited:text-[36pt] 
+                no-underline hover:no-underline visited:no-underline">Django Girls Blog</a>
+        </h1>
+    </div>
+    <div class="ml-[40px]">
+    {% for post in posts %}
+        <div class="mb-[70px]">
+            <p class="text-[#828282]">published: {{ post.published_date }}</p>
             <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p class="text-slate-500 break-all">{{ post.text|linebreaksbr }}</p>
         </div>
-        {% endfor %}
-    </body>
-</html>
+    {% endfor %}
+    </div>
+{% endblock %}

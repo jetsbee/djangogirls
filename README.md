@@ -9,6 +9,24 @@
 - Formatter: black
 - Import statement organizer: isort
 
+## Install tailwindcss dependencies
+
+```sh
+npm install
+```
+
+## Watch tailwindcss
+
+```sh
+npm run dev
+```
+
+## Build tailwindcss
+
+```sh
+npm run build
+```
+
 ## Start services
 
 ```sh

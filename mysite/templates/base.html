@@ -1,0 +1,11 @@
+{% load static %}
+<html>
+    <head>
+        <title>Ola's blog</title>
+        <link rel="stylesheet" href="{% static 'common/css/index.css' %}">
+        {% block links %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

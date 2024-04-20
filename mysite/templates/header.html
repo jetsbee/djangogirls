@@ -8,6 +8,19 @@
             float-right hover:float-right visited:float-right
             text-[26pt] hover:text-[26pt] visited:text-[26pt]
             mr-[20px] hover:mr-[20px] visited:mr-[20px]">📝</a>
+    <form method="post" action="{% url 'logout' %}" class="text-white hover:text-white visited:text-white
+        float-right hover:float-right visited:float-right
+        text-[26pt] hover:text-[26pt] visited:text-[26pt]
+        mr-[20px] hover:mr-[20px] visited:mr-[20px]">
+        {% csrf_token %}
+        Hello {{ user.username }}
+        <button type="submit"><small>(logout)</small></button>
+    </form>
+    {% else %}
+    <a href="{% url 'login' %}" class="text-white hover:text-white visited:text-white
+    float-right hover:float-right visited:float-right
+    text-[26pt] hover:text-[26pt] visited:text-[26pt]
+    mr-[20px] hover:mr-[20px] visited:mr-[20px]">🔒</a>
     {% endif %}
     <h1>
         <a href="/" class="text-white hover:text-white visited:text-white 

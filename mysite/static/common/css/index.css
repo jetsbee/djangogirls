@@ -578,6 +578,22 @@ video {
   margin-top: 0px;
 }
 
+.mb-\[20px\] {
+  margin-bottom: 20px;
+}
+
+.mt-\[20px\] {
+  margin-top: 20px;
+}
+
+.ml-\[20px\] {
+  margin-left: 20px;
+}
+
+.mr-\[0px\] {
+  margin-right: 0px;
+}
+
 .block {
   display: block;
 }
@@ -676,6 +692,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[rgb\(130\2c 130\2c 130\)\] {
+  --tw-text-opacity: 1;
+  color: rgb(130 130 130 / var(--tw-text-opacity));
 }
 
 .no-underline {

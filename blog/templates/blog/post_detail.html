@@ -4,7 +4,7 @@
     <div class="ml-[40px]">
         <div class="mb-[70px]">
             {% if post.published_date %}
-            <p class="text-[#828282]">published: {{ post.published_date }}</p>
+            <p class="text-[rgb(130,130,130)]">published: {{ post.published_date }}</p>
             {% else %}
             <a href="{% url 'post_publish' pk=post.pk %}">Publish</a>
             {% endif %}
@@ -16,4 +16,26 @@
             <p class="text-slate-500 break-all">{{ post.text|linebreaksbr }}</p>
         </div>
     </div>
+
+    <hr>
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% for comment in post.comments.all %}
+    {% if user.is_authenticated or comment.approved_comment %}
+    <div class="mt-[20px] mr-[0px] mb-[20px] ml-[20px]">
+        <div class="text-[rgb(130,130,130)]">
+            {{ comment.created_date }}
+            {% if not comment.approved_comment %}
+            <a  href="{% url 'comment_remove' pk=comment.pk %}">👎</a>
+            <a href="{% url 'comment_approve' pk=comment.pk %}">👍</a>
+            {% endif %}
+        </div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+    {% else %}
+    <p class="mt-[20px] mr-[0px] mb-[20px] ml-[20px]">No comments here yet :(</p>
+    {% endif %}
+    {% empty %}
+    <p class="mt-[20px] mr-[0px] mb-[20px] ml-[20px]">No comments here yet :(</p>
+    {% endfor %}
 {% endblock %}
